@@ -62,7 +62,7 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-  
+
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('searchInput').parentNode.removeChild(document.getElementById('searchInput'))"];
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('mw-mf-main-menu-button').parentNode.removeChild(document.getElementById('mw-mf-main-menu-button'))"];
 
@@ -74,6 +74,7 @@
      "}\";"
      "document.getElementsByTagName('head')[0].appendChild(script);"];
 
+    //test for github
     [webView stringByEvaluatingJavaScriptFromString:@"alerter();"];
 
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;

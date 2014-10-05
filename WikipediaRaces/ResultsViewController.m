@@ -40,8 +40,8 @@
     
     NSUserDefaults *totalScore = [NSUserDefaults standardUserDefaults];
     NSInteger currentTotalScore = [totalScore integerForKey:@"Current Total"];
-    NSInteger newCurrentTotalScore = currentTotalScore + finalScoreInt;
-    [totalScore setInteger: newCurrentTotalScore forKey:@"Current Total"];
+    currentTotalScore += finalScoreInt;
+    [totalScore setInteger: currentTotalScore forKey:@"Current Total"];
 
 
 
