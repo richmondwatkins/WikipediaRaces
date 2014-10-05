@@ -21,6 +21,7 @@
 @property NSTimer *stopWatch;
 @property NSDate *startDate;
 @property NSString *timeString;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *finalWordToolBarDisplay;
 
 @end
 
@@ -145,7 +146,7 @@
 
 {
     static NSInteger counter = 0;
-    self.title = [NSString stringWithFormat:@"Clicks  %@     Time  %ld", self.clickCounterDisplay, (long)counter++];
+    self.title = [NSString stringWithFormat:@"Clicks  %@  Time  %ld        ", self.clickCounterDisplay, (long)counter++];
 
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
