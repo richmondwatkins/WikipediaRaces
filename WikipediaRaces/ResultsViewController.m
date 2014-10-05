@@ -60,6 +60,7 @@
     self.timerScoreLabel.text =[NSString stringWithFormat:@"%ld", (long)timerScore];
     self.clickScoreTotalLabel.text = [NSString stringWithFormat:@"%ld", (long)clickScore];
     self.totalScoreLabel.text = [NSString stringWithFormat:@"%ld", (long)self.totalScoreForGame];
+
     
 
 }
