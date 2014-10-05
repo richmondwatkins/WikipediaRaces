@@ -18,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *finishButton;
 @property (weak, nonatomic) IBOutlet UILabel *finishedLabel;
 @property NSString *clickCounterDisplay;
+@property NSTimer *stopWatch;
+@property NSDate *startDate;
+@property NSString *timeString;
 
 @end
 
@@ -33,7 +36,13 @@
     self.navigationItem.leftBarButtonItem=nil;
     self.navigationController.toolbarHidden = NO;
     self.finishedLabel.hidden=YES;
-
+    self.startDate = [NSDate date];
+    self.stopWatch = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                           target:self
+                                                         selector:@selector(updateTimer)
+                                                         userInfo:nil
+                                                          repeats:YES];
+    
 
 
     //Above I have the urlTextField hidden so that the user can't see it but we can use it to use the strings that are produced from the URL in this text box.
@@ -92,6 +101,9 @@
 }
 
 -(void)winningClick{
+    [self.stopWatch invalidate];
+    self.stopWatch = nil;
+    [self updateTimer];
     UIAlertView *alertView = [[UIAlertView alloc]init];
     alertView.delegate = self;
     alertView.title = [NSString  stringWithFormat:@"Success! You have found the wikipedia page for %@", self.wordTwo];
@@ -105,6 +117,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ResultsViewController *viewController = (ResultsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"RVC"];
     viewController.clickCounterData = self.clickCounterDisplay;
+    viewController.timerData = self.timeString;
     [self presentViewController:viewController animated:YES completion:nil];
 
 }
@@ -114,6 +127,50 @@
         [self.wikipediaWebView goBack];
     }
 }
+
+- (void)updateTimer
+
+{
+    static NSInteger counter = 0;
+    self.title = [NSString stringWithFormat:@"Counter: %ld", (long)counter++];
+
+    NSDate *currentDate = [NSDate date];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+
+    // Create a date formatter
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"mm:ss"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+
+    // Format the elapsed time and set it to the label
+    self.timeString = [dateFormatter stringFromDate:timerDate];
+    self.title = self.timeString;
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
