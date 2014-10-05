@@ -23,8 +23,18 @@
     uint32_t rnd = arc4random_uniform(100);
     NSInteger finalScoreInt = rnd;
     self.finalScore = [NSString stringWithFormat:@"%ld", (long)finalScoreInt];
+
+
+    NSUserDefaults *saved = [NSUserDefaults standardUserDefaults];
+    NSString *stringHighScoreCurrent = [saved stringForKey:@"UserHighScore"];
+    NSInteger highScoreInt = [stringHighScoreCurrent intValue];
+
+    if (finalScoreInt > highScoreInt) {
+
     NSUserDefaults *saveHighScore = [NSUserDefaults standardUserDefaults];
     [saveHighScore setObject: self.finalScore forKey:@"UserHighScore"];
+
+    }
 
 
 }
