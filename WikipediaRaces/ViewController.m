@@ -44,6 +44,8 @@
     self.silverBadgeLabel.hidden = YES;
     self.bronzeBadgeLabel.hidden = YES;
 
+
+
     NSUserDefaults *saved = [NSUserDefaults standardUserDefaults];
     NSString *stringHighScore = [saved stringForKey:@"UserHighScore"];
     self.highScore.text = stringHighScore;

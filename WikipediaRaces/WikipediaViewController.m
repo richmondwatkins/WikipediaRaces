@@ -42,6 +42,12 @@
                                                          selector:@selector(updateTimer)
                                                          userInfo:nil
                                                           repeats:YES];
+
+
+
+
+
+    
     
 
 
