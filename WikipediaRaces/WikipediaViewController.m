@@ -131,8 +131,7 @@
 
 {
     static NSInteger counter = 0;
-    NSString *lotsOfSpace = @"        ";
-    self.title = [NSString stringWithFormat:@"time:%ld %@ clicks%@", (long)counter++, lotsOfSpace ,self.clickCounterDisplay];
+    self.title = [NSString stringWithFormat:@"Time   %ld     Clicks   %@", (long)counter++,self.clickCounterDisplay];
 
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
