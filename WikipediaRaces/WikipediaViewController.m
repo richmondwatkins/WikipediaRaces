@@ -62,11 +62,19 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSString *html = [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.outerHTML"];
-    NSLog(@"%@", html);
+  
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('searchInput').parentNode.removeChild(document.getElementById('searchInput'))"];
+    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('mw-mf-main-menu-button').parentNode.removeChild(document.getElementById('mw-mf-main-menu-button'))"];
 
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('searchInput').style.display = 'none'"];
-    [webView stringByEvaluatingJavaScriptFromString:@"document.getElementByClass('mw-disambig').style.display = 'none'"];
+    [webView stringByEvaluatingJavaScriptFromString:@"var script = document.createElement('script');"
+     "script.type = 'text/javascript';"
+     "script.text = \"function alerter() { "
+     "var elements = document.getElementsByClassName('mw-disambig');"
+     "elements[0].parentNode.removeChild(elements[0]);"
+     "}\";"
+     "document.getElementsByTagName('head')[0].appendChild(script);"];
+
+    [webView stringByEvaluatingJavaScriptFromString:@"alerter();"];
 
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     self.clickCounter += 0.5;
