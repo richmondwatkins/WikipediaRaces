@@ -21,6 +21,7 @@
 @property NSTimer *stopWatch;
 @property NSDate *startDate;
 @property NSString *timeString;
+@property int numberOfLoads;
 
 @end
 
@@ -83,11 +84,16 @@
      "}\";"
      "document.getElementsByTagName('head')[0].appendChild(script);"];
 
-
     [webView stringByEvaluatingJavaScriptFromString:@"alerter();"];
 
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    self.clickCounter += 0.5;
+    self.numberOfLoads += 1;
+    if (self.numberOfLoads <= 2) {
+        self.clickCounter = 1;
+    }else{
+        self.clickCounter += 0.5;
+    }
+
     self.clickCounterDisplay = [NSString stringWithFormat:@"%0.f", self.clickCounter ];
 
     NSString *theTitle =  [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
