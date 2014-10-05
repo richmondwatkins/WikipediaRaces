@@ -183,11 +183,13 @@
                         <outlet property="firstWordLabel" destination="mUZ-Pj-Dp1" id="Nch-Oz-8TI"/>
                         <outlet property="goldBadgeLabel" destination="iEZ-Fz-rNR" id="xvC-xA-ypN"/>
                         <outlet property="highScore" destination="EsV-4S-4kl" id="ZOC-ka-Ap4"/>
+                        <outlet property="highScoreTitle" destination="gIy-55-WRN" id="d27-YL-Xia"/>
                         <outlet property="secondWordLabel" destination="kie-bM-N2K" id="H90-Wz-XpA"/>
                         <outlet property="silverBadgeLabel" destination="5T1-wK-a0S" id="O3e-MG-3EV"/>
                         <outlet property="startButton" destination="4Cc-p7-btj" id="fGB-3u-gJH"/>
                         <outlet property="toLabel" destination="zSM-jV-z8v" id="3j5-35-ng4"/>
                         <outlet property="totalScoreLabel" destination="iKX-QE-nHF" id="SlV-hP-acp"/>
+                        <outlet property="totalScoreTitle" destination="OFm-2f-QIC" id="doh-bZ-nuU"/>
                         <outlet property="warningLabel" destination="5pf-TE-kol" id="Wic-ee-YR9"/>
                         <outlet property="wikiRacesTitleLabel" destination="VMA-tP-NP0" id="fnY-Wa-f2W"/>
                     </connections>

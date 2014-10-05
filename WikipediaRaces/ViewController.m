@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *goldBadgeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *silverBadgeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bronzeBadgeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *highScoreTitle;
+@property (weak, nonatomic) IBOutlet UILabel *totalScoreTitle;
 @end
 
 @implementation ViewController
@@ -88,6 +90,14 @@
     self.firstWordLabel.hidden = NO;
     self.secondWordLabel.hidden = NO;
     self.beginWastingLife.hidden = NO;
+    self.highScore.hidden=YES;
+    self.goldBadgeLabel.hidden=YES;
+    self.silverBadgeLabel.hidden=YES;
+    self.bronzeBadgeLabel.hidden=YES;
+    self.totalScoreLabel.hidden=YES;
+    self.totalScoreTitle.hidden=YES;
+    self.highScoreTitle.hidden=YES;
+
     // Above, when the button clicked the top three self's dissapear and the bottom four show up. This is where the user sees the word they start with and then end. The two words need to be chosen at random each time. We should pull from a list of like 1000 names we pre make just to controll it early on.
     
 }
