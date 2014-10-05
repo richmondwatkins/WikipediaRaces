@@ -21,7 +21,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *beginWastingLife;
 @property NSString *startWord;
 @property NSString *endWord;
+@property NSString *totalScoreString;
 @property (weak, nonatomic) IBOutlet UILabel *highScore;
+@property (weak, nonatomic) IBOutlet UILabel *totalScoreLabel;
 @end
 
 @implementation ViewController
@@ -37,6 +39,12 @@
     NSUserDefaults *saved = [NSUserDefaults standardUserDefaults];
     NSString *stringHighScore = [saved stringForKey:@"UserHighScore"];
     self.highScore.text = stringHighScore;
+
+
+    NSUserDefaults *totalScore = [NSUserDefaults standardUserDefaults];
+    NSInteger currenttotalScore = [totalScore integerForKey:@"Current Total"];
+    self.totalScoreString = [NSString stringWithFormat:@"%ld", (long)currenttotalScore];
+    self.totalScoreLabel.text = self.totalScoreString;
     
 }
 

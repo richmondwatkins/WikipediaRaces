@@ -118,6 +118,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFm-2f-QIC">
+                                <rect key="frame" x="368" y="540" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKX-QE-nHF">
+                                <rect key="frame" x="279" y="363" width="20" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -151,6 +163,7 @@
                         <outlet property="secondWordLabel" destination="kie-bM-N2K" id="H90-Wz-XpA"/>
                         <outlet property="startButton" destination="4Cc-p7-btj" id="fGB-3u-gJH"/>
                         <outlet property="toLabel" destination="zSM-jV-z8v" id="3j5-35-ng4"/>
+                        <outlet property="totalScoreLabel" destination="iKX-QE-nHF" id="SlV-hP-acp"/>
                         <outlet property="warningLabel" destination="5pf-TE-kol" id="Wic-ee-YR9"/>
                         <outlet property="wikiRacesTitleLabel" destination="VMA-tP-NP0" id="fnY-Wa-f2W"/>
                     </connections>
