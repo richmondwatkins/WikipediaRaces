@@ -83,13 +83,12 @@
      "}\";"
      "document.getElementsByTagName('head')[0].appendChild(script);"];
 
-    //test for github
+
     [webView stringByEvaluatingJavaScriptFromString:@"alerter();"];
 
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     self.clickCounter += 0.5;
     self.clickCounterDisplay = [NSString stringWithFormat:@"%0.f", self.clickCounter ];
-    self.title = self.clickCounterDisplay;
 
     NSString *theTitle =  [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
 
@@ -132,7 +131,8 @@
 
 {
     static NSInteger counter = 0;
-    self.title = [NSString stringWithFormat:@"Counter: %ld", (long)counter++];
+    NSString *lotsOfSpace = @"        ";
+    self.title = [NSString stringWithFormat:@"time:%ld %@ clicks%@", (long)counter++, lotsOfSpace ,self.clickCounterDisplay];
 
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
@@ -145,7 +145,7 @@
 
     // Format the elapsed time and set it to the label
     self.timeString = [dateFormatter stringFromDate:timerDate];
-    self.title = self.timeString;
+
 
     
 }
