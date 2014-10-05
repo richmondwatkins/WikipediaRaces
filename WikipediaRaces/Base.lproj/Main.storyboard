@@ -171,30 +171,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWr-qa-dmb">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="605"/>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jWr-qa-dmb">
+                                <rect key="frame" x="0.0" y="-59" width="600" height="631"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="nCs-DG-ycq" id="o0b-Z5-v0m"/>
                                 </connections>
                             </webView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="urlbox that will be hidden" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5w1-iI-DWN">
-                                <rect key="frame" x="167" y="14" width="222" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="jWr-qa-dmb" firstAttribute="top" secondItem="yKA-nO-iye" secondAttribute="bottom" id="2Rl-JA-XN1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jWr-qa-dmb" secondAttribute="trailing" constant="-16" id="HO0-cF-WZ7"/>
-                            <constraint firstItem="jWr-qa-dmb" firstAttribute="leading" secondItem="iPt-nQ-GKd" secondAttribute="leadingMargin" constant="-16" id="R3W-aK-1NY"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="jWr-qa-dmb" secondAttribute="bottom" constant="-69" id="Xda-ow-pAs"/>
-                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="urlTextField" destination="5w1-iI-DWN" id="b0H-MW-uha"/>
                         <outlet property="wikipediaWebView" destination="jWr-qa-dmb" id="UrU-EM-6i0"/>
                     </connections>
                 </viewController>
