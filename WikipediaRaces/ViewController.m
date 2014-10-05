@@ -30,7 +30,7 @@
     self.firstWordLabel.hidden = YES;
     self.secondWordLabel.hidden = YES;
     self.beginWastingLife.hidden = YES;
-    // Above, I start the sentence on the Mains story board hidden. When the user clicks start they see the words they will be hunting for and then click "begin wasting life" to begin when they're ready.
+   
 }
 
 - (void)didReceiveMemoryWarning {

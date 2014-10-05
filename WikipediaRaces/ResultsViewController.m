@@ -12,6 +12,7 @@
 @interface ResultsViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *numberOfGameClicks;
 @property (strong, nonatomic) IBOutlet UILabel *totalGameTime;
+@property NSString *finalScore;
 
 @end
 
@@ -19,6 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSInteger finalScoreInt = 100;
+    self.finalScore = [NSString stringWithFormat:"@", self.finalScoreInt ];
+    
+
+    [[NSUserDefaults standardUserDefaults] setInteger: finalScore forKey: @"highScore"];
 
 }
 
@@ -31,5 +37,9 @@
     ViewController *viewController = backHomeSeguethree.destinationViewController;
     viewController.playAgain = self.title;
 }
+
+
+
+
 
 @end
