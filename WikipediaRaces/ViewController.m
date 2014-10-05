@@ -24,6 +24,9 @@
 @property NSString *totalScoreString;
 @property (weak, nonatomic) IBOutlet UILabel *highScore;
 @property (weak, nonatomic) IBOutlet UILabel *totalScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goldBadgeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *silverBadgeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bronzeBadgeLabel;
 @end
 
 @implementation ViewController
@@ -35,6 +38,9 @@
     self.firstWordLabel.hidden = YES;
     self.secondWordLabel.hidden = YES;
     self.beginWastingLife.hidden = YES;
+    self.goldBadgeLabel.hidden = YES;
+    self.silverBadgeLabel.hidden = YES;
+    self.bronzeBadgeLabel.hidden = YES;
 
     NSUserDefaults *saved = [NSUserDefaults standardUserDefaults];
     NSString *stringHighScore = [saved stringForKey:@"UserHighScore"];
@@ -45,6 +51,25 @@
     NSInteger currenttotalScore = [totalScore integerForKey:@"Current Total"];
     self.totalScoreString = [NSString stringWithFormat:@"%ld", (long)currenttotalScore];
     self.totalScoreLabel.text = self.totalScoreString;
+
+    NSUserDefaults *goldMedal = [NSUserDefaults standardUserDefaults];
+    NSInteger doYouHaveGold = [goldMedal integerForKey:@"Check for Gold"];
+
+    NSUserDefaults *silverMedal = [NSUserDefaults standardUserDefaults];
+    NSInteger doYouHaveSilver = [silverMedal integerForKey:@"Check for Silver"];
+
+    NSUserDefaults *bronzeMedal = [NSUserDefaults standardUserDefaults];
+    NSInteger doYouHaveBronze = [bronzeMedal integerForKey:@"Check for Bronze"];
+
+
+    if (doYouHaveGold == 1) {
+        self.goldBadgeLabel.hidden = NO;
+    } else if (doYouHaveSilver == 1) {
+        self.silverBadgeLabel.hidden = NO;
+    } else if (doYouHaveBronze == 1) {
+        self.bronzeBadgeLabel.hidden = NO;
+    }
+
     
 }
 

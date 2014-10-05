@@ -18,6 +18,9 @@
 @property NSInteger totalScoreForGame;
 @property (weak, nonatomic) IBOutlet UILabel *timerScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goldMedalEarned;
+@property (weak, nonatomic) IBOutlet UILabel *silverMedalEarned;
+@property (weak, nonatomic) IBOutlet UILabel *bronzeMedalEarned;
 
 
 @end
@@ -26,6 +29,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.goldMedalEarned.hidden = YES;
+    self.silverMedalEarned.hidden = YES;
+    self.bronzeMedalEarned.hidden = YES;
 
 }
 
@@ -61,16 +67,47 @@
     self.clickScoreTotalLabel.text = [NSString stringWithFormat:@"%ld", (long)clickScore];
     self.totalScoreLabel.text = [NSString stringWithFormat:@"%ld", (long)self.totalScoreForGame];
 
-    
+    if (clicks <= 5) {
+
+        NSUserDefaults *goldMedal = [NSUserDefaults standardUserDefaults];
+        NSInteger doYouHaveGold = 1;
+        [goldMedal setInteger: doYouHaveGold forKey: @"Check for Gold"];
+        self.goldMedalEarned.hidden = NO;
+
+
+}
+    if (clicks <= 8 && clicks > 5) {
+
+        NSUserDefaults *silverMedal = [NSUserDefaults standardUserDefaults];
+        NSInteger doYouHaveSilver = 1;
+        [silverMedal setInteger: doYouHaveSilver forKey: @"Check for Silver"];
+        self.silverMedalEarned.hidden = NO;
+
+    }
+
+    if (clicks <= 12 && clicks > 8) {
+
+        NSUserDefaults *bronzeMedal = [NSUserDefaults standardUserDefaults];
+        NSInteger doYouHaveBronze = 1;
+        [bronzeMedal setInteger: doYouHaveBronze forKey: @"Check for Bronze"];
+        self.bronzeMedalEarned.hidden = NO;
+    }
 
 }
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)backHomeSeguethree sender:(id)sender {
-    ViewController *viewController = backHomeSeguethree.destinationViewController;
-    viewController.playAgain = self.title;
 
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
