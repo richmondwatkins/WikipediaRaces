@@ -20,11 +20,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSInteger finalScoreInt = 100;
-    self.finalScore = [NSString stringWithFormat:"@", self.finalScoreInt ];
-    
+    uint32_t rnd = arc4random_uniform(100);
+    NSInteger finalScoreInt = rnd;
+    self.finalScore = [NSString stringWithFormat:@"%ld", (long)finalScoreInt];
+    NSUserDefaults *saveHighScore = [NSUserDefaults standardUserDefaults];
+    [saveHighScore setObject: self.finalScore forKey:@"UserHighScore"];
 
-    [[NSUserDefaults standardUserDefaults] setInteger: finalScore forKey: @"highScore"];
 
 }
 

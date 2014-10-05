@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "WikipediaViewController.h"
+
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UILabel *connectLabel;
@@ -19,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *beginWastingLife;
 @property NSString *startWord;
 @property NSString *endWord;
+@property (weak, nonatomic) IBOutlet UILabel *highScore;
 @end
 
 @implementation ViewController
@@ -30,7 +33,11 @@
     self.firstWordLabel.hidden = YES;
     self.secondWordLabel.hidden = YES;
     self.beginWastingLife.hidden = YES;
-   
+
+    NSUserDefaults *saved = [NSUserDefaults standardUserDefaults];
+    NSString *stringHighScore = [saved stringForKey:@"UserHighScore"];
+    self.highScore.text = stringHighScore;
+    
 }
 
 - (void)didReceiveMemoryWarning {

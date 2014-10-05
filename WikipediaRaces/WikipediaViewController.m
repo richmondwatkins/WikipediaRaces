@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.urlTextField.hidden = YES;
     self.finishButton.hidden = YES;
     [self loadHomePage];
