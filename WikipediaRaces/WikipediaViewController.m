@@ -62,9 +62,7 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSString *html = [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.outerHTML"];
-    NSLog(@"%@", html);
-
+  
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('searchInput').parentNode.removeChild(document.getElementById('searchInput'))"];
     [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('mw-mf-main-menu-button').parentNode.removeChild(document.getElementById('mw-mf-main-menu-button'))"];
 
