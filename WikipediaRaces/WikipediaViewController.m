@@ -44,6 +44,14 @@
                                                           repeats:YES];
 
 
+    UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
+
+
+
+    NSArray *actionButtonItemsTwo = @[cameraItem];
+    self.navigationItem.rightBarButtonItems = actionButtonItemsTwo;
+    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+
 
 
 
@@ -137,7 +145,7 @@
 
 {
     static NSInteger counter = 0;
-    self.title = [NSString stringWithFormat:@"Clicks   %@     Time   %ld", self.clickCounterDisplay, (long)counter++];
+    self.title = [NSString stringWithFormat:@"Clicks  %@     Time  %ld", self.clickCounterDisplay, (long)counter++];
 
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
@@ -155,9 +163,6 @@
     
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)returnHome sender:(id)sender{
-    ViewController *backHome = returnHome.destinationViewController;
-}
 
 
 

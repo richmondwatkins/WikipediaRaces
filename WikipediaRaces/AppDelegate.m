@@ -28,6 +28,25 @@
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+
+    [[UIToolbar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
+    [[UIToolbar appearance] setTintColor:[UIColor whiteColor]];
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return YES;
 
 }
