@@ -37,7 +37,7 @@
     self.navigationController.toolbarHidden = NO;
     self.finishedLabel.hidden=YES;
     self.startDate = [NSDate date];
-    self.stopWatch = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
+    self.stopWatch = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                            target:self
                                                          selector:@selector(updateTimer)
                                                          userInfo:nil
