@@ -10,6 +10,7 @@
 
 @interface ResultsViewController : UIViewController
 @property NSString *clickCounterData;
+@property NSString *timerData;
 
 
 @end
