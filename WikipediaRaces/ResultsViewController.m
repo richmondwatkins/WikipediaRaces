@@ -13,6 +13,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *numberOfGameClicks;
 @property (strong, nonatomic) IBOutlet UILabel *totalGameTime;
 @property NSString *finalScore;
+@property (weak, nonatomic) IBOutlet UILabel *clickScoreTotalLabel;
+
 
 @end
 
@@ -27,7 +29,7 @@
 
     NSUserDefaults *saved = [NSUserDefaults standardUserDefaults];
     NSString *stringHighScoreCurrent = [saved stringForKey:@"UserHighScore"];
-    NSInteger highScoreInt = [stringHighScoreCurrent intValue];
+    NSInteger highScoreInt = [stringHighScoreCurrent integerValue];
 
     if (finalScoreInt > highScoreInt) {
 
@@ -47,12 +49,18 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     self.numberOfGameClicks.text = self.clickCounterData;
+    NSInteger clicks = [self.numberOfGameClicks.text integerValue];
+    NSInteger clickScore = 500 - (clicks * 20);
+    self.clickScoreTotalLabel.text = [NSString stringWithFormat:@"%ld", (long)clickScore];
+    
+
 }
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)backHomeSeguethree sender:(id)sender {
     ViewController *viewController = backHomeSeguethree.destinationViewController;
     viewController.playAgain = self.title;
+
 }
 
 
