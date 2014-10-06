@@ -34,6 +34,8 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+
+
     [super viewDidLoad];
     self.toLabel.hidden = YES;
     self.connectLabel.hidden = YES;
@@ -43,7 +45,6 @@
     self.goldBadgeLabel.hidden = YES;
     self.silverBadgeLabel.hidden = YES;
     self.bronzeBadgeLabel.hidden = YES;
-
 
 
     NSUserDefaults *saved = [NSUserDefaults standardUserDefaults];
@@ -111,6 +112,8 @@
     wikiCtrler.wordOne = self.startWord;
     wikiCtrler.wordTwo = self.endWord;
 }
+
+
 
 
 @end

@@ -32,8 +32,9 @@
     [[UIToolbar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
     [[UIToolbar appearance] setTintColor:[UIColor whiteColor]];
 
-    
 
+
+  
 
 
 
@@ -72,6 +73,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 
 
