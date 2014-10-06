@@ -235,9 +235,12 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem title="Final Word" id="OT0-0q-m7w"/>
+                    </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="finalWordToolBarDisplay" destination="OT0-0q-m7w" id="ZvI-bB-UER"/>
                         <outlet property="wikipediaWebView" destination="jWr-qa-dmb" id="UrU-EM-6i0"/>
                     </connections>
                 </viewController>
