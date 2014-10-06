@@ -48,7 +48,7 @@
 
     UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
 
-
+    self.finalWordToolBarDisplay.title = self.wordTwo;
 
     NSArray *actionButtonItemsTwo = @[cameraItem];
     self.navigationItem.rightBarButtonItems = actionButtonItemsTwo;
