@@ -82,6 +82,7 @@
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
+    NSLog(@"Made it");
     self.numberOfLoads += 1;
     if (self.numberOfLoads % 2 == 0) {
         NSMutableDictionary *wikiInfo = [[NSMutableDictionary alloc] init];
@@ -90,6 +91,7 @@
         [wikiInfo setObject:currentURL forKey:@"url"];
         [wikiInfo setObject:pageTitle forKey:@"title"];
         [self.arrayOfWords addObject:wikiInfo];
+        NSLog(@"%@", self.arrayOfWords);
     }
 
     if (self.numberOfLoads == 2) {
