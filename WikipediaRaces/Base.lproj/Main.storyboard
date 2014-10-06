@@ -151,6 +151,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ycq-VS-UNQ">
+                                <rect key="frame" x="162" y="0.0" width="144" height="43"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="SMO-xW-ATq"/>
+                                </connections>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -191,12 +198,13 @@
                         <outlet property="totalScoreLabel" destination="iKX-QE-nHF" id="SlV-hP-acp"/>
                         <outlet property="totalScoreTitle" destination="OFm-2f-QIC" id="doh-bZ-nuU"/>
                         <outlet property="warningLabel" destination="5pf-TE-kol" id="Wic-ee-YR9"/>
+                        <outlet property="webView" destination="ycq-VS-UNQ" id="X1M-7F-zUg"/>
                         <outlet property="wikiRacesTitleLabel" destination="VMA-tP-NP0" id="fnY-Wa-f2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="344"/>
+            <point key="canvasLocation" x="1157" y="376"/>
         </scene>
         <!--Wikipedia View Controller-->
         <scene sceneID="Jd4-2G-XVg">

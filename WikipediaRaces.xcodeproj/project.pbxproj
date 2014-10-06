@@ -87,6 +87,7 @@
 		4C612C1419DE7D5000D93E98 /* WikipediaRaces */ = {
 			isa = PBXGroup;
 			children = (
+				4C612C1F19DE7D5000D93E98 /* Main.storyboard */,
 				4C612C1919DE7D5000D93E98 /* AppDelegate.h */,
 				4C612C1A19DE7D5000D93E98 /* AppDelegate.m */,
 				4C612C1C19DE7D5000D93E98 /* ViewController.h */,
@@ -95,7 +96,6 @@
 				4C2B0B9E19DE813E000FAA6D /* WikipediaViewController.m */,
 				4C9A903B19DFA61A00DBFA43 /* ResultsViewController.h */,
 				4C9A903C19DFA61A00DBFA43 /* ResultsViewController.m */,
-				4C612C1F19DE7D5000D93E98 /* Main.storyboard */,
 				4C612C2219DE7D5000D93E98 /* Images.xcassets */,
 				4C612C2419DE7D5000D93E98 /* LaunchScreen.xib */,
 				4C612C1519DE7D5000D93E98 /* Supporting Files */,

@@ -63,7 +63,7 @@
 }
 
 - (void) loadHomePage {
-    [self loadURLString:[NSString stringWithFormat:@"http://en.wikipedia.org/wiki/%@", self.wordOne]];
+    [self loadURLString:[NSString stringWithFormat:@"%@", self.wordOneUrl]];
 
 }
 

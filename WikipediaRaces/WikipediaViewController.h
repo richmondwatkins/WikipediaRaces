@@ -10,5 +10,8 @@
 
 @interface WikipediaViewController : UIViewController
 @property NSString *wordOne;
+@property NSString *wordOneUrl;
 @property NSString *wordTwo;
+@property NSString *wordTwoUrl;
+
 @end

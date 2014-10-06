@@ -10,7 +10,7 @@
 #import "WikipediaViewController.h"
 
 
-@interface ViewController ()
+@interface ViewController () <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UILabel *connectLabel;
 @property (weak, nonatomic) IBOutlet UILabel *firstWordLabel;
@@ -29,6 +29,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *bronzeBadgeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *highScoreTitle;
 @property (weak, nonatomic) IBOutlet UILabel *totalScoreTitle;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property int wikiLoads;
+@property NSMutableArray *arrayOfWords;
+@property int numberOfLoads;
 @end
 
 @implementation ViewController
@@ -72,7 +76,33 @@
         self.bronzeBadgeLabel.hidden = NO;
     }
 
-    
+    self.arrayOfWords = [[NSMutableArray alloc]init];
+    [self returnRandomWikiWords];
+
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    self.numberOfLoads += 1;
+    if (self.numberOfLoads % 2 == 0) {
+        NSMutableDictionary *wikiInfo = [[NSMutableDictionary alloc] init];
+        NSString *currentURL = webView.request.URL.absoluteString;
+        NSString *pageTitle = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementById('section_0').innerHTML.toString()"];
+        [wikiInfo setObject:currentURL forKey:@"url"];
+        [wikiInfo setObject:pageTitle forKey:@"title"];
+        [self.arrayOfWords addObject:wikiInfo];
+    }
+
+    if (self.numberOfLoads == 2) {
+        [self returnRandomWikiWords];
+    }
+
+}
+
+-(void)returnRandomWikiWords{
+    NSURL *url = [NSURL URLWithString:@"http://en.m.wikipedia.org/wiki/Special:Random"];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL: url];
+    [self.webView loadRequest:urlRequest];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,8 +136,10 @@
     self.startWord = @"Planet";
     self.endWord = @"Earth";
     WikipediaViewController *wikiCtrler = segue.destinationViewController;
-    wikiCtrler.wordOne = self.startWord;
-    wikiCtrler.wordTwo = self.endWord;
+    wikiCtrler.wordOne = self.arrayOfWords[0][@"title"];
+    wikiCtrler.wordTwo = self.arrayOfWords[1][@"title"];
+    wikiCtrler.wordOneUrl = self.arrayOfWords[0][@"url"];
+    wikiCtrler.wordTwoUrl = self.arrayOfWords[1][@"url"];
 }
 
 
