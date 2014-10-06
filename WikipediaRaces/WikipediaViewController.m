@@ -22,6 +22,7 @@
 @property NSDate *startDate;
 @property NSString *timeString;
 @property int numberOfLoads;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *finalWordToolBarDisplay;
 
 @end
 
@@ -43,10 +44,15 @@
                                                          selector:@selector(updateTimer)
                                                          userInfo:nil
                                                           repeats:YES];
-    
 
 
-    //Above I have the urlTextField hidden so that the user can't see it but we can use it to use the strings that are produced from the URL in this text box.
+    UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
+
+    self.finalWordToolBarDisplay.title = self.wordTwo;
+
+    NSArray *actionButtonItemsTwo = @[cameraItem];
+    self.navigationItem.rightBarButtonItems = actionButtonItemsTwo;
+    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -137,7 +143,7 @@
 
 {
     static NSInteger counter = 0;
-    self.title = [NSString stringWithFormat:@"Clicks   %@     Time   %ld", self.clickCounterDisplay, (long)counter++];
+    self.title = [NSString stringWithFormat:@"Clicks  %@  Time  %ld        ", self.clickCounterDisplay, (long)counter++];
 
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
@@ -150,33 +156,6 @@
 
     // Format the elapsed time and set it to the label
     self.timeString = [dateFormatter stringFromDate:timerDate];
-
-
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end
