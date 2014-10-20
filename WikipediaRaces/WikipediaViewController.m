@@ -46,7 +46,7 @@
                                                           repeats:YES];
 
 
-    UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
+    UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(unwindToViewController)];
 
     self.finalWordToolBarDisplay.title = self.wordTwo;
 
@@ -55,11 +55,9 @@
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)unwindToViewController{
+    [self performSegueWithIdentifier:@"returnToHome" sender:self];
 }
-
 
 -(void) loadURLString: (NSString *)urlString {
     NSURL *url = [NSURL URLWithString:urlString];

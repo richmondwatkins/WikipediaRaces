@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6wp-GQ-40c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6wp-GQ-40c">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -192,9 +192,11 @@
                     <connections>
                         <outlet property="finalWordToolBarDisplay" destination="OT0-0q-m7w" id="ZvI-bB-UER"/>
                         <outlet property="wikipediaWebView" destination="jWr-qa-dmb" id="UrU-EM-6i0"/>
+                        <segue destination="CBD-6h-vbA" kind="unwind" identifier="returnToHome" unwindAction="returnToHome:" id="OSj-WH-W7n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Xt-1q-6MB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CBD-6h-vbA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1913" y="344"/>
         </scene>

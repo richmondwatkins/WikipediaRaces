@@ -85,7 +85,6 @@
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
-    NSLog(@"Made it");
     self.numberOfLoads += 1;
     if (self.numberOfLoads % 2 == 0) {
         NSMutableDictionary *wikiInfo = [[NSMutableDictionary alloc] init];
@@ -132,22 +131,23 @@
     self.totalScoreLabel.hidden=YES;
     self.totalScoreTitle.hidden=YES;
     self.highScoreTitle.hidden=YES;
-
-    // Above, when the button clicked the top three self's dissapear and the bottom four show up. This is where the user sees the word they start with and then end. The two words need to be chosen at random each time. We should pull from a list of like 1000 names we pre make just to controll it early on.
-    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    self.startWord = @"Planet";
-    self.endWord = @"Earth";
-    WikipediaViewController *wikiCtrler = segue.destinationViewController;
-    wikiCtrler.wordOne = self.arrayOfWords[0][@"title"];
-    wikiCtrler.wordTwo = self.arrayOfWords[1][@"title"];
-    wikiCtrler.wordOneUrl = self.arrayOfWords[0][@"url"];
-    wikiCtrler.wordTwoUrl = self.arrayOfWords[1][@"url"];
+    if (self.arrayOfWords.count < 2) {
+        [self returnRandomWikiWords];
+    }else{
+        WikipediaViewController *wikiCtrler = segue.destinationViewController;
+        wikiCtrler.wordOne = self.arrayOfWords[0][@"title"];
+        wikiCtrler.wordTwo = self.arrayOfWords[1][@"title"];
+        wikiCtrler.wordOneUrl = self.arrayOfWords[0][@"url"];
+        wikiCtrler.wordTwoUrl = self.arrayOfWords[1][@"url"];
+    }
 }
 
 
-
+- (IBAction)returnToHome:(UIStoryboardSegue *)segue {
+    NSLog(@"And now we are back.");
+}
 
 @end
