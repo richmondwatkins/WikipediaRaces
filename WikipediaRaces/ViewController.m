@@ -95,6 +95,7 @@
         [wikiInfo setObject:pageTitle forKey:@"title"];
         [self.arrayOfWords addObject:wikiInfo];
         NSLog(@"%@", self.arrayOfWords);
+
     }
 
     if (self.numberOfLoads == 2) {
@@ -145,6 +146,7 @@
     wikiCtrler.wordTwo = self.arrayOfWords[1][@"title"];
     wikiCtrler.wordOneUrl = self.arrayOfWords[0][@"url"];
     wikiCtrler.wordTwoUrl = self.arrayOfWords[1][@"url"];
+   
 }
 
 

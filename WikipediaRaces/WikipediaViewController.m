@@ -46,14 +46,19 @@
                                                           repeats:YES];
 
 
-    UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
+    UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
+
+
 
     self.finalWordToolBarDisplay.title = self.wordTwo;
 
-    NSArray *actionButtonItemsTwo = @[cameraItem];
+    NSArray *actionButtonItemsTwo = @[cancelItem];
     self.navigationItem.rightBarButtonItems = actionButtonItemsTwo;
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
